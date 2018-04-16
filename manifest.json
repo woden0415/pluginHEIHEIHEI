@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "yWall",
+  "description": "添加需要屏蔽的网站，跳到自己设定的网址。",
+
+  "version": "1.0",
+  "permissions": [
+    "tabs"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.xvideos.com/*",
+        "https://www.baidu.com/*"
+      ],
+      "js": [
+        "./content/content_script.js"
+      ]
+    }
+  ]
+}
