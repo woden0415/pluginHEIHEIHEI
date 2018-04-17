@@ -8,6 +8,11 @@
   "permissions": [
     "tabs"
   ],
+  "background": {
+    // 2种指定方式，如果指定JS，那么会自动生成一个背景页
+    "page": "./background/background.html"
+    //"scripts": ["js/background.js"]
+  },
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
@@ -20,7 +25,9 @@
       ],
       "js": [
         "./content/content_script.js"
-      ]
+      ],
+      "run_at": "document_start"
     }
-  ]
+  ],
+  "homepage_url": "https://www.baidu.com"
 }
