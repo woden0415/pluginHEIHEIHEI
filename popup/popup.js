@@ -12,21 +12,14 @@ document.querySelector('.btn-add').addEventListener('click', function(){
         arr = [seletedUrl]
       }
       chrome.storage.local.set({ 'firbidUrls': arr }, function(){
-        console.log('添加成功')
+        alert('添加成功')
       })
     });
   });
 });
 
-document.querySelector('.btn-get').addEventListener('click', function(){
-  getObject(urlKey, function(result){
-    alert(JSON.stringify(result))
-  })
-})
-
 document.querySelector('.btn-del').addEventListener('click', function(){
   chrome.storage.local.remove(urlKey, function(){
-    console.log('clear success!')
+    alert('clear success!')
   })
 })
-
